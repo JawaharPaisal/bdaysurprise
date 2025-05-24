@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 15 15 19; /* #0F0F13 */
+  --foreground: 250 250 250; /* #FAFAFA */
+  --muted: 24 24 27; /* #18181B */
+  --muted-foreground: 161 161 170; /* #A1A1AA */
+  --popover: 24 24 27; /* #18181B */
+  --popover-foreground: 250 250 250; /* #FAFAFA */
+  --card: 24 24 27; /* #18181B */
+  --card-foreground: 250 250 250; /* #FAFAFA */
+  --border: 39 39 42; /* #27272A */
+  --input: 39 39 42; /* #27272A */
+  --primary: 147 197 253; /* #93C5FD */
+  --primary-foreground: 15 23 42; /* #0F172A */
+  --secondary: 39 39 42; /* #27272A */
+  --secondary-foreground: 250 250 250; /* #FAFAFA */
+  --accent: 39 39 42; /* #27272A */
+  --accent-foreground: 250 250 250; /* #FAFAFA */
+  --destructive: 239 68 68; /* #EF4444 */
+  --destructive-foreground: 250 250 250; /* #FAFAFA */
+  --ring: 147 197 253; /* #93C5FD */
+  --radius: 0.5rem;
+  
+  /* Professional game colors */
+  --game-red: 239 68 68; /* #EF4444 */
+  --game-cyan: 6 182 212; /* #06B6D4 */
+  --game-blue: 59 130 246; /* #3B82F6 */
+  --game-green: 34 197 94; /* #22C55E */
+  --game-yellow: 234 179 8; /* #EAB308 */
+  --game-bg: 15 15 19; /* #0F0F13 */
+  --game-surface: 24 24 27; /* #18181B */
+  --game-accent: 147 197 253; /* #93C5FD */
+}
+
+.dark {
+  --background: 26 26 46; /* #1A1A2E */
+  --foreground: 255 255 255; /* white */
+  --muted: 22 33 62; /* #16213E */
+  --muted-foreground: 156 163 175; /* gray-400 */
+  --popover: 22 33 62; /* #16213E */
+  --popover-foreground: 255 255 255; /* white */
+  --card: 22 33 62; /* #16213E */
+  --card-foreground: 255 255 255; /* white */
+  --border: 233 69 96; /* #E94560 */
+  --input: 22 33 62; /* #16213E */
+  --primary: 233 69 96; /* #E94560 */
+  --primary-foreground: 255 255 255; /* white */
+  --secondary: 22 33 62; /* #16213E */
+  --secondary-foreground: 255 255 255; /* white */
+  --accent: 233 69 96; /* #E94560 */
+  --accent-foreground: 255 255 255; /* white */
+  --destructive: 239 68 68; /* red-500 */
+  --destructive-foreground: 255 255 255; /* white */
+  --ring: 233 69 96; /* #E94560 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-body antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-game {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-game-red {
+    background-color: hsl(var(--game-red));
+  }
+  
+  .bg-game-cyan {
+    background-color: hsl(var(--game-cyan));
+  }
+  
+  .bg-game-blue {
+    background-color: hsl(var(--game-blue));
+  }
+  
+  .bg-game-green {
+    background-color: hsl(var(--game-green));
+  }
+  
+  .bg-game-yellow {
+    background-color: hsl(var(--game-yellow));
+  }
+  
+  .bg-game-bg {
+    background-color: hsl(var(--game-bg));
+  }
+  
+  .bg-game-surface {
+    background-color: hsl(var(--game-surface));
+  }
+  
+  .bg-game-accent {
+    background-color: hsl(var(--game-accent));
+  }
+  
+  .text-game-red {
+    color: hsl(var(--game-red));
+  }
+  
+  .text-game-cyan {
+    color: hsl(var(--game-cyan));
+  }
+  
+  .text-game-blue {
+    color: hsl(var(--game-blue));
+  }
+  
+  .text-game-green {
+    color: hsl(var(--game-green));
+  }
+  
+  .text-game-yellow {
+    color: hsl(var(--game-yellow));
+  }
+  
+  .text-game-accent {
+    color: hsl(var(--game-accent));
+  }
+  
+  .border-game-red {
+    border-color: hsl(var(--game-red));
+  }
+  
+  .border-game-cyan {
+    border-color: hsl(var(--game-cyan));
+  }
+  
+  .border-game-blue {
+    border-color: hsl(var(--game-blue));
+  }
+  
+  .border-game-green {
+    border-color: hsl(var(--game-green));
+  }
+  
+  .border-game-yellow {
+    border-color: hsl(var(--game-yellow));
+  }
+  
+  .border-game-accent {
+    border-color: hsl(var(--game-accent));
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes dash {
+  to { 
+    stroke-dashoffset: -10; 
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-dash {
+  animation: dash 1s linear infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.scratch-canvas {
+  cursor: crosshair;
+}
+
+.task-area {
+  transition: all 0.3s ease;
+}
+
+.task-area:hover {
+  transform: scale(1.1);
+}
+
+.player-avatar {
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.wire-connector {
+  stroke-dasharray: 5,5;
+  animation: dash 1s linear infinite;
+}
+
+/* Grid pattern for game background */
+.grid-pattern {
+  background-image: linear-gradient(45deg, hsl(var(--game-surface)) 25%, hsl(var(--game-bg)) 25%, hsl(var(--game-bg)) 50%, hsl(var(--game-surface)) 50%, hsl(var(--game-surface)) 75%, hsl(var(--game-bg)) 75%, hsl(var(--game-bg)));
+  background-size: 40px 40px;
+}
+
+/* Mobile layout fixes */
+@media (max-width: 768px) {
+  /* Ensure no horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Fix container sizing on mobile */
+  .container-mobile-fix {
+    max-width: 100vw;
+    margin: 0;
+    padding: 0.75rem;
+  }
+  
+  /* Ensure game elements stay within bounds */
+  .game-container {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+  
+  /* Fix task areas on mobile */
+  .task-area-mobile {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 60px;
+    max-height: 60px;
+  }
+  
+  /* Responsive text sizing */
+  .text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  }
+  
+  .heading-responsive {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: aqua;
+  }
+  
+  /* Mobile-friendly buttons */
+  .btn-mobile {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Fix video player on mobile */
+  video {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+  
+  /* Fix mobile controls positioning */
+  .mobile-controls {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 50;
+    max-width: calc(100vw - 2rem);
+    pointer-events: auto;
+  }
+  
+  /* Ensure task areas are clickable */
+  .task-area {
+    z-index: 20;
+    pointer-events: auto;
+  }
+  
+  /* Player avatar should be above tasks but below UI */
+  .player-avatar {
+    z-index: 15;
+  }
+}
+
+/* Professional gradient backgrounds */
+.gradient-professional {
+  background: linear-gradient(135deg, hsl(var(--game-bg)) 0%, hsl(var(--game-surface)) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, hsl(var(--game-blue)) 0%, hsl(var(--game-cyan)) 100%);
+}
+
+/* Enhanced button styles */
+.btn-professional {
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn-professional:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}

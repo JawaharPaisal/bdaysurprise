@@ -1,0 +1,113 @@
+Create a web app game titled "Pixel Surprise: Among Us Edition". The game will have the following structure and behavior:
+
+📁 File Structure:
+diff
+Copy
+Edit
+- index.html          → Welcome page with detailed best friend message
+- game.html           → Map-based game with player movement and task areas
+- task.html           → Among Us-style mini-task interface
+- scratch.html        → Scratch card popup with a hidden message
+- final.html          → Final video reveal after completing all tasks
+- style.css           → Styling for all pages
+- script.js           → Shared logic and game state handling
+- movement.js         → Player movement system (keyboard + on-screen buttons)
+- tasks.js            → Logic for tasks and task completion
+- images/             → Folder for all images (map, tasks, scratch card, player)
+- videos/             → Folder for final surprise video (placeholder for now)
+🧡 index.html — Welcome Page
+Centered greeting message (customizable) for best friend with love, humor, and memory highlights.
+
+Button: "Start Surprise"
+On click → goes to game.html
+
+🌍 game.html — Interactive World
+A 2D map image with 3–5 task locations (can be simple circles or icons).
+
+A player avatar moves using:
+
+Arrow keys / WASD (laptop)
+
+On-screen directional buttons (mobile)
+
+When player collides with a task area → redirect to task.html?task=1 (use URL params to track which task)
+
+🎯 movement.js — Player Controls
+JavaScript for handling both:
+
+Keyboard input
+
+Mobile-friendly button taps
+
+Uses basic collision detection to trigger task areas
+
+🧪 task.html — Among Us Mini-Tasks
+Display different tasks based on the URL parameter (?task=1, ?task=2, etc.)
+
+Sample tasks (to implement as mini-games):
+
+Wire Connect Task
+
+Drag colored wires from left to right to connect matching colors
+
+Swipe Card Task
+
+Drag a fake ID card at the correct speed to simulate “Swipe Accepted”
+
+Unlock Manifold (Numbers Order)
+
+Click numbers from 1 to 10 in the correct order
+
+After task completion:
+→ redirect to scratch.html?task=1
+
+🎉 scratch.html — Scratch Card with Message
+Display a scratch card using a <canvas> overlay and allow "scratching" with:
+
+Mouse (desktop)
+
+Touch (mobile)
+
+Once a threshold of scratch area is revealed (70%), show:
+
+A personal message for that task (placeholder initially)
+
+→ "Continue" button to go back to game.html
+
+📦 script.js — Task State Manager
+Use localStorage or a simple object to:
+
+Track which tasks are completed
+
+After all tasks done → redirect to final.html
+
+🎥 final.html — Final Surprise Page
+Display a placeholder video (can be added later by you)
+
+Include a sweet closing message like:
+
+“You’ve completed all the tasks! This was made with love 💖 – here’s your surprise!”
+
+🎨 style.css — Styling
+Use a playful, colorful design (inspired by Among Us)
+
+Rounded buttons, soft shadows, responsive layout
+
+Mobile-first design with scaling and readable fonts
+
+🛠️ Additional Notes:
+Messages in scratch cards and final video will be added later manually.
+
+Use basic placeholder images/icons initially for tasks and player.
+
+Prioritize simplicity and fun over complexity.
+
+✅ End of Prompt
+Once this is generated in Replit, you can customize:
+
+The welcome message in index.html
+
+The messages revealed in scratch.html
+
+The video in final.html
+
