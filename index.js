@@ -22,13 +22,9 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 var vite_config_default = defineConfig({
   plugins: [
     react(),
-    runtimeErrorOverlay(),
-    ...process.env.NODE_ENV !== "production" && process.env.REPL_ID !== void 0 ? [
-      await import("@replit/vite-plugin-cartographer").then(
-        (m) => m.cartographer()
-      )
-    ] : []
+    runtimeErrorOverlay()
   ],
+  base: "/bdaysurprise/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
