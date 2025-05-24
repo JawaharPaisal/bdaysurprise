@@ -13,7 +13,7 @@ import NotFound from "@/pages/not-found";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={WelcomePage} />
+      <Route path="/bdaysurprise" component={WelcomePage} />
       <Route path="/game" component={GameMapPage} />
       <Route path="/task/:taskId" component={TaskPage} />
       <Route path="/scratch/:taskId" component={ScratchCardPage} />
