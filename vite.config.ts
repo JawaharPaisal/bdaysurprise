@@ -7,8 +7,9 @@ export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
-  
+   
   ],
+  base: "/bdaysurprise/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
