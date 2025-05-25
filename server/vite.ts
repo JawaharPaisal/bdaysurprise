@@ -23,7 +23,7 @@ export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
     middlewareMode: true,
     hmr: { server },
-    allowedHosts: true,
+    allowedHosts: "all"
   };
 
   const vite = await createViteServer({
@@ -40,6 +40,9 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
+  // Serve static files from public directory before any other middleware
+  app.use("/bdaysurprise", express.static(path.resolve(import.meta.dirname, "..", "public")));
+  
   app.use(vite.middlewares);
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
@@ -68,7 +71,7 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(import.meta.dirname, "public");
+  const distPath = path.resolve(import.meta.dirname, "..", "public");
 
   if (!fs.existsSync(distPath)) {
     throw new Error(

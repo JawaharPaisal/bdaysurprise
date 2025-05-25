@@ -21,8 +21,7 @@ export default function SafeTask({ onComplete }: SafeTaskProps) {
       `First digit: It's the only even number less than 3`,
       `Second digit: Half a dozen items`,
       `Third digit: The number of sides on a circle`,
-      `Fourth digit: Number of fingers on one hand`,
-      `Additional clue: This code represents a special date (26th day, 5th month)`
+      `Fourth digit: Number of fingers on one hand`
     ];
     setHints(newHints);
   }, [targetCombination]);
