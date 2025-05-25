@@ -59,8 +59,7 @@ export default function FinalPage() {
               className="w-full aspect-video rounded-2xl"
               poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'%3E%3CRect fill='%23000' width='1200' height='675'/%3E%3Cg transform='translate(600,337.5)'%3E%3Ccircle r='60' fill='%23ef4444'/%3E%3Cpolygon points='-20,-25 -20,25 25,0' fill='%23fff'/%3E%3C/g%3E%3Ctext x='50%25' y='75%25' fill='%23fff' text-anchor='middle' font-size='24'%3EClick to play your special video%3C/text%3E%3C/svg%3E"
             >
-             <source src={`${import.meta.env.BASE_URL}final-video.mp4`} type="video/mp4" />
-
+             <source src="/bdaysurprise/final-video.mp4" type="video/mp4" />
               <p className="text-gray-400">Your browser doesn't support video playback.</p>
             </video>
           </div>
